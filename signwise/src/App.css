@@ -1,42 +1,66 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.container {
+  margin: 1rem;
+  padding-top: 3rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  color: #19360A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  padding-left: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.site-title {
+  font-size: 2em;
 }
 
-.card {
-  padding: 2em;
+.nav ul {
+  padding: 0;
+  padding-right: 2rem;
+  margin: 0;
+  gap: 2rem;
+  background-color: white;
+  display: flex;
 }
 
-.read-the-docs {
-  color: #888;
+.nav ul li {
+  list-style: none;
+  background-color: inherit;
 }
+
+a {
+  font-weight: 500;
+  color: #19360A;
+  text-decoration: inherit;
+  background-color: inherit;
+}
+
+a:hover {
+  color: black;
+}
+
+.login-btn {
+  background-color: #516B13;
+  color:white;
+  border: #516B13 2px solid;
+  border-radius: 10px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  transition: 0.4s;
+}
+
+.login-btn:hover {
+  background-color: white;
+  color: #516B13;
+}
+
