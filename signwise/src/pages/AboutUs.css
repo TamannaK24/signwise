@@ -1,0 +1,35 @@
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 1em;
+    padding-top: 2.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .learn-btn {
+    background-color: #E1E2B6;
+    color: #516B13;
+    border: 2px solid #E1E2B6;
+    border-radius: 10px;
+    padding: 0.6em 1.2em;
+    transition: 0.4s;
+    cursor: pointer;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 6rem;
+  }
+  
+  .learn-btn:hover {
+    background-color: #516B13;
+    color: #E1E2B6;
+    border-color: #E1E2B6;
+  }
