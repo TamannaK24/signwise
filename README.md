@@ -1,2 +1,0 @@
-# signwise
-ASL Learning Companion 
