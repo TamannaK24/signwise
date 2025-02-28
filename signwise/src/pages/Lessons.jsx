@@ -1,13 +1,13 @@
 import Sidebar from '../components/Sidebar';
 
-function Learn() {
+function Lessons() {
 
     return (
       <div className="goals-bg">
         <Sidebar/>
         <div className="goals-content">
           <div className="goals-title">
-            <h1>Learn</h1>
+            <h1>Lessons</h1>
           </div>
         </div>
       </div>
@@ -15,4 +15,4 @@ function Learn() {
     );
   };
   
-  export default Learn;
+  export default Lessons;
