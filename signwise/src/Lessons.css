@@ -1,0 +1,94 @@
+.lessons-bg {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top : 0;
+    display: flex;
+}
+
+.lessons-content {
+    display: flex;
+    background-color: white;
+    height: calc(100vh-50px); /*same top/bot padding as sidebar*/
+    box-sizing: border-box;
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px); /* sizebar is 250px  */
+    overflow: hidden;
+    justify-content: center;
+    margin-top: 40px;
+    margin-right: 2rem;
+}
+
+.lessons-title {
+    background-color: transparent;
+    display: flex;
+    position: fixed;
+    height: 100px;
+}
+
+.lessons-title h1 {
+    background-color: transparent;
+    color: #19360A;
+}
+
+.lessons-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px; /* 100px title + 20px gap */
+    width: 100%;
+    background: transparent;
+}
+
+
+.box {
+    background-color: #E1E2B6;
+    height: 20%;
+    border-radius: 10px;
+    box-shadow: 4px 4px #516B13;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #19360A;
+    width: 80%; 
+    flex-direction: row; 
+}
+
+.box-title {
+    font-size: 3rem;
+    margin: 0;
+    background-color: transparent;
+    font-weight: normal; 
+}
+
+.box-body {
+    width: 20rem; 
+    background-color: transparent;
+    color: black; 
+    margin-left: 10rem;
+}
+
+.box-text {
+    font-size: 1.5rem;
+    margin: 0;
+    background-color: transparent;
+    font-weight: normal; 
+    color: 000000; 
+}
+
+.lessons-boxes .arrow-img img {
+    background: transparent !important;
+}
+
+.arrow-img {
+    background: none !important; 
+    margin-left: 30rem;
+}
