@@ -43,7 +43,7 @@ p {
 .homepage-text {
     position: absolute;
     right: 10%;
-    top: 25%;
+    top: 30%;
     width: 70vh;
     height: 20vh;
     display: flex;
@@ -68,7 +68,7 @@ p {
     background-color: #516B13;
     height: 50vh;
     width: 70vh;
-    padding-bottom: 5rem;
+    padding-bottom: 3rem;
 }
 
 .get-started-btn {
