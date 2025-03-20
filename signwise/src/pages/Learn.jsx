@@ -7,7 +7,7 @@ function Learn() {
         <Sidebar/>
         <div className="goals-content">
           <div className="goals-title">
-            <h1>Learn</h1>
+            <h1>Dashboard</h1>
           </div>
         </div>
       </div>

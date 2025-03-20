@@ -47,48 +47,55 @@
     background: transparent;
 }
 
-
 .box {
     background-color: #E1E2B6;
-    height: 20%;
     border-radius: 10px;
     box-shadow: 4px 4px #516B13;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     font-weight: bold;
     color: #19360A;
-    width: 80%; 
-    flex-direction: row; 
+    width: 80%;
+    padding: 1rem 2rem;
+    height: 120px;
+}
+
+.box-title, .box-body, .arrow-img {
+    flex: 1; /* divides into 3 equal sections */
 }
 
 .box-title {
-    font-size: 3rem;
-    margin: 0;
+    font-size: 1.5rem;
     background-color: transparent;
-    font-weight: normal; 
+    font-weight: normal;
 }
 
 .box-body {
-    width: 20rem; 
     background-color: transparent;
-    color: black; 
-    margin-left: 10rem;
+    color: black;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
 }
 
 .box-text {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 0;
     background-color: transparent;
-    font-weight: normal; 
-    color: 000000; 
-}
-
-.lessons-boxes .arrow-img img {
-    background: transparent !important;
+    font-weight: normal;
+    color: #000000;
 }
 
 .arrow-img {
-    background: none !important; 
-    margin-left: 30rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: none !important;
+}
+
+.arrow-img img {
+    background: transparent !important;
+    width: 50px;
+    height: 50px;
 }
