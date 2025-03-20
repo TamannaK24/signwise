@@ -1,27 +1,52 @@
 .contact {
-    padding: 2rem;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 0.5rem;
+    text-align: center;
+    margin-top: -10rem; 
 }
 
 .sub-heading {
     font-size: medium;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 fieldset {
     display: flex;
-    padding: 1rem;
+    padding: 0rem;
     border: none;
     width: 480px;
     flex-direction: column;
-    margin: auto;
+    margin: 0;
 }
 
 input, textarea, select {
-  border: 1px solid #E1E2B6;
-  border-radius: 5px;
-  background-color: #E1E2B6;
-  color: black;
-  height: 3rem;
-  padding: 1rem;
+    border: 1px solid #E1E2B6;
+    border-radius: 5px;
+    background-color: #E1E2B6;
+    color: black;
+    height: 3rem;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+textarea {
+    height: 6rem;
+    resize: none;
 }
 
 .field, .message {
@@ -44,13 +69,13 @@ button {
     display: flex;
     justify-content: center;
     margin: auto;
-    margin-bottom: 10rem;
-  }
-  
+    margin-top: 1rem;
+}
+
 button:disabled, button[disabled] {
     border: 1px solid #262d22;
     background-color: #262d22;
     color: white;
     cursor: not-allowed;
-    box-shadow:#262d22;
+    box-shadow: none;
 }
