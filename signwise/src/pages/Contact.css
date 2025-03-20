@@ -1,9 +1,11 @@
 .contact {
     padding: 2rem;
+    min-width: "30%";
 }
 
 .sub-heading {
     font-size: medium;
+    text-align: center;
 }
 
 fieldset {
@@ -29,6 +31,12 @@ input, textarea, select {
     padding-bottom: 24px;
     display: flex;
     flex-direction: column;
+    text-align: left;
+}
+
+.field label, .message label {
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 button {
