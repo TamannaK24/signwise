@@ -1,10 +1,3 @@
-p {
-    font-size: 3.4rem;
-    font-weight: 400;
-    margin-bottom: 0px;
-    margin-top: 0px;
-}
-
 .get-started-btn {
     background-color: #E1E2B6;
     display: block;
@@ -49,10 +42,10 @@ p {
 .homepage-text {
     position: absolute;
     bottom: 22%;
-    left: 52%;
+    left: 56%;
 }
 
 .container {
-    padding-right: 60px;
+    padding-right: 40px;
     text-align: left;
 }
