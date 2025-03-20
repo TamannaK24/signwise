@@ -1,0 +1,58 @@
+p {
+    font-size: 3.4rem;
+    font-weight: 400;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.get-started-btn {
+    background-color: #E1E2B6;
+    display: block;
+    font-weight: 500;
+    font-size: 1.4rem;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 10px;
+    text-align: center;
+    color: #19360A;
+    box-shadow: 2px 2px 4px #19360A;
+    display: flex;
+    justify-content: center;
+    transition: 0.4s;
+}
+
+.get-started-btn:hover {
+    
+    background-color: white;
+}
+
+.homepage-text {
+    text-align: left;
+}
+
+
+.homepage {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width:100%;
+    background-image: url('/homepage-bg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-position: center center;
+    top: 0;
+    left: 0;
+}
+
+.homepage-text {
+    position: absolute;
+    bottom: 22%;
+    left: 52%;
+}
+
+.container {
+    padding-right: 60px;
+    text-align: left;
+}

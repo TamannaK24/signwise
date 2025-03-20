@@ -23,6 +23,7 @@
   align-items: center;
   gap: 2rem;
   padding-left: 2rem;
+  z-index: 1;
 }
 
 .site-title {
@@ -66,4 +67,70 @@ a:hover {
 .login-btn:hover {
   background-color: white;
   color: #516B13;
+}
+
+.sidebar ul {
+  list-style: none;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+.wrapper .sidebar {
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  background: #516B13;
+  padding: 50px 0;
+  left: 0;
+  top: 50px;
+}
+
+
+.wrapper .sidebar ul li {
+  /* padding: 15px; */
+  border-bottom: 10px solid #516B13;
+  border-top: 10px solid #516B13;
+  color: white;
+  text-align: left;
+  width: 100%;
+}
+
+.wrapper .sidebar ul li a {
+  padding: 15px;
+  color: white;
+  display: block;
+  margin-left: 1rem;
+  margin-right: 2rem;
+  text-align: center;
+  font-weight: 400;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.wrapper .sidebar ul li:hover {
+  background: #40560D;
+  transition: 0.4s;
+}
+
+.wrapper .sidebar ul li.active-link {
+  background-color: #40560D;
+  display: block;
+}
+
+.wrapper .sidebar ul li a.active-link {
+  background: #40560D;
+  color: white;
+  pointer-events:none;
+  transition: none;
 }
