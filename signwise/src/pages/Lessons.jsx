@@ -1,78 +1,69 @@
+import { Link } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
-import '../Lessons.css'
+import '../Lessons.css';
 import arrow from '../assets/arrow.png';
 
 function Lessons() {
+  return (
+    <div className="lessons-bg">
+      <Sidebar />
+      <div className="lessons-content">
+        <div className="lessons-title">
+          <h1>Lessons</h1>
+        </div>
 
-    return (
-      <div className="lessons-bg">
-        <Sidebar/>
-        <div className="lessons-content">
-          <div className="lessons-title">
-            <h1>Lessons</h1>
-          </div>
-
-          <div className="lessons-boxes">
-            <div className="box">
-              <div className="box-title">
-                Guided Hands
+        <div className="lessons-boxes">
+          <Link to="/guided-hands" className="box">
+            <div className="box-title">Guided Hands</div>
+            <div className="box-body">
+              <div className="box-text">
+                Video instruction tutorials of signing each letter and user must replicate
               </div>
-              <div className="box-body">
-                <div className="box-text">
-                  Video instruction tutorials of signing each letter and user must replicate  
-                </div>
-              </div>
-              <div className="arrow-img"> 
-                <img src={arrow} alt="arrow" />
-              </div> 
             </div>
-
-            <div className="box">
-              <div className="box-title">
-                Finger Spell Focus
-              </div>
-              <div className="box-body">
-                <div className="box-text">
-                  Provides user with letter and user must answer with the correct corresponding ASL symbol
-                </div>
-              </div>
-              <div className="arrow-img"> 
-                <img src={arrow} alt="arrow" />
-              </div> 
+            <div className="arrow-img">
+              <img src={arrow} alt="arrow" />
             </div>
+          </Link>
 
-            <div className="box">
-              <div className="box-title">
-                Words to Hands
+          <Link to="/finger-spell-focus" className="box">
+            <div className="box-title">Finger Spell Focus</div>
+            <div className="box-body">
+              <div className="box-text">
+                Provides user with letter and user must answer with the correct corresponding ASL symbol
               </div>
-              <div className="box-body">
-                <div className="box-text">
-                  Provides user with word and user must answer with the correct corresponding ASL symbol for each letter
-                </div>
-              </div>
-              <div className="arrow-img"> 
-                <img src={arrow} alt="arrow" />
-              </div> 
             </div>
+            <div className="arrow-img">
+              <img src={arrow} alt="arrow" />
+            </div>
+          </Link>
 
-            <div className="box">
-              <div className="box-title">
-                Sign to Text
+          <Link to="/words-to-text" className="box">
+            <div className="box-title">Words to Hands</div>
+            <div className="box-body">
+              <div className="box-text">
+                Provides user with word and user must answer with the correct corresponding ASL symbol for each letter
               </div>
-              <div className="box-body">
-                <div className="box-text">
+            </div>
+            <div className="arrow-img">
+              <img src={arrow} alt="arrow" />
+            </div>
+          </Link>
+
+          <Link to="/sign-to-hands" className="box">
+            <div className="box-title">Sign to Text</div>
+            <div className="box-body">
+              <div className="box-text">
                 User presented with various ASL symbols and must type the correct letter or word
-                </div>
               </div>
-              <div className="arrow-img"> 
-                <img src={arrow} alt="arrow" />
-              </div> 
             </div>
-          </div>
+            <div className="arrow-img">
+              <img src={arrow} alt="arrow" />
+            </div>
+          </Link>
         </div>
       </div>
+    </div>
+  );
+}
 
-    );
-  };
-  
-  export default Lessons;
+export default Lessons;
