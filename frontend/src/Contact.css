@@ -1,0 +1,116 @@
+/* Contact section container */
+.contact {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 2rem;
+    /* reduce space above */
+}
+
+/* Title styles */
+.contact h1 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+/* Subheading */
+.sub-heading {
+    font-size: medium;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Form setup */
+form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Override any global container padding */
+.contact .container {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Form field container */
+fieldset {
+    display: flex;
+    padding: 1rem;
+    border: none;
+    width: 480px;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* Input styles */
+input,
+textarea,
+select {
+    border: 1px solid white;
+    /* white border */
+    border-radius: 5px;
+    background-color: #E1E2B6;
+    height: 3rem;
+    padding: 1rem;
+    font-size: 1rem;
+    color: black;
+}
+
+/* Input focus styles */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border: 1px solid white;
+    /* keep border white on focus */
+    box-shadow: none;
+    /* remove default focus glow */
+}
+
+/* Textarea specific styles */
+textarea {
+    height: 6rem;
+    resize: none;
+}
+
+/* Each field wrapper */
+.field,
+.message {
+    position: relative;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Submit button */
+button {
+    padding: 12px;
+    width: 240px;
+    background-color: #E1E2B6;
+    color: #516B13;
+    border: 2px solid #E1E2B6;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 1rem;
+    font-weight: normal;
+}
+
+button:disabled,
+button[disabled] {
+    border: 1px solid #262d22;
+    background-color: #262d22;
+    color: white;
+    cursor: not-allowed;
+    box-shadow: none;
+}
