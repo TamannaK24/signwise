@@ -9,7 +9,8 @@ function Navbar() {
           <li><Link to="/learn" className="nav-item">Learn</Link></li>
           <li><Link to="/features" className="nav-item">Features</Link></li>
           <li><Link to="/about-us" className="nav-item">About Us</Link></li>
-          <li><Link to="/log-in" className="login-btn">Log In</Link></li>
+          <li><Link to="/contact" className="nav-item">Contact</Link></li>
+          <li><Link to="/login" className="login-btn">Log In</Link></li>
       </ul>
     </nav>
   );
