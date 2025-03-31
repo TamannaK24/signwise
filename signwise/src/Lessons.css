@@ -1,0 +1,108 @@
+.lessons-bg {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    display: flex;
+}
+
+.lessons-content {
+    display: flex;
+    background-color: white;
+    height: calc(100vh - 50px); /* fixed spacing issue */
+    box-sizing: border-box;
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px); /* sidebar is 250px */
+    overflow: hidden;
+    justify-content: center;
+    margin-top: 40px;
+    margin-right: 2rem;
+}
+
+.lessons-title {
+    background-color: transparent;
+    display: flex;
+    position: fixed;
+    height: 100px;
+}
+
+.lessons-title h1 {
+    background-color: transparent;
+    color: #19360A;
+}
+
+.lessons-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px; /* 100px title + 20px gap */
+    width: 100%;
+    background: transparent;
+}
+
+.box {
+    background-color: #E1E2B6;
+    border-radius: 10px;
+    box-shadow: 4px 4px #516B13;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #19360A;
+    width: 80%;
+    padding: 1rem 2rem;
+    height: 120px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    background-color: #c7c888; /* slightly darker shade */
+    box-shadow: 6px 6px #40560D; /* slightly deeper shadow */
+}
+
+.box-title, .box-body, .arrow-img {
+    flex: 1; /* divides into 3 equal sections */
+}
+
+.box-title {
+    font-size: 1.5rem;
+    background-color: transparent;
+    font-weight: normal;
+}
+
+.box-body {
+    background-color: transparent;
+    color: black;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.box-text {
+    font-size: 1rem;
+    margin: 0;
+    background-color: transparent;
+    font-weight: normal;
+    color: #000000;
+}
+
+.arrow-img {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: none !important;
+}
+
+.arrow-img img {
+    background: transparent !important;
+    width: 50px;
+    height: 50px;
+}
