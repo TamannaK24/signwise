@@ -1,28 +1,34 @@
+.container {
+  padding-left: 1rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.column {
+  float: none;
+  width: 33.33%;
+  padding: 1em;
+  padding-top: 2.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+  
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
-
-/* Centering container */
-.columns-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  max-width: 90%; /* keeps it inside the viewport */
-  margin: 0 auto;
-  flex-wrap: wrap; /* will allow it to wrap on smaller screens */
-}
-
-/* Columns inside wrapper */
-.column {
-  width: 25%;
-  min-width: 200px;
-  padding: 1em;
-  background: transparent;
-  box-sizing: border-box;
-}
-
+  
 .learn-btn {
   background-color: #E1E2B6;
   color: #516B13;
@@ -35,27 +41,12 @@
   display: flex;
   justify-content: center;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 6rem;
+  margin-bottom: 10rem;
 }
-
+  
 .learn-btn:hover {
   background-color: #516B13;
-  color: white;
+  color: #E1E2B6;
   border-color: #E1E2B6;
-}
-
-/* Typography using classes */
-.h1 {
-  text-align: center;
-}
-
-.h2 {
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
-}
-
-.p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  padding-top: 1.5rem;
 }

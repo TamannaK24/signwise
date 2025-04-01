@@ -49,7 +49,7 @@ function Lessons() {
             </div>
           </Link>
 
-          <Link to="/sign-to-hands" className="box">
+          <Link to="/sign-to-text" className="box">
             <div className="box-title">Sign to Text</div>
             <div className="box-body">
               <div className="box-text">
