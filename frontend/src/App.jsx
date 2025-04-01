@@ -17,7 +17,7 @@ import Settings from "./pages/Settings";
 import GuidedHands from './lessonsPages/guidedHands';
 import FingerSpellFocus from './lessonsPages/fingerSpellFocus';
 import WordsToText from './lessonsPages/wordsToText';
-import SignToHands from './lessonsPages/signToHands';
+import SignToText from './lessonsPages/signToText';
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -42,7 +42,7 @@ function App() {
           <Route path="/guided-hands" element={<GuidedHands />} />
           <Route path="/finger-spell-focus" element={<FingerSpellFocus />} />
           <Route path="/words-to-text" element={<WordsToText />} />
-          <Route path="/sign-to-hands" element={<SignToHands />} />
+          <Route path="/sign-to-text" element={<SignToText />} />
         </Routes>
       </div>
       <Footer />

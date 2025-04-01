@@ -6,8 +6,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 2rem;
-    /* reduce space above */
+    padding-top: 2rem; /* reduce space above */
 }
 
 /* Title styles */
@@ -48,40 +47,31 @@ fieldset {
     margin: 0;
 }
 
+fieldset label, .field label {
+    text-align: left;
+    color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
 /* Input styles */
-input,
-textarea,
-select {
-    border: 1px solid white;
-    /* white border */
+input, textarea, select {
+    border: 1px solid #E1E2B6;
     border-radius: 5px;
     background-color: #E1E2B6;
+    color: black;
     height: 3rem;
     padding: 1rem;
     font-size: 1rem;
-    color: black;
 }
 
-/* Input focus styles */
-input:focus,
-textarea:focus,
-select:focus {
-    outline: none;
-    border: 1px solid white;
-    /* keep border white on focus */
-    box-shadow: none;
-    /* remove default focus glow */
-}
-
-/* Textarea specific styles */
 textarea {
     height: 6rem;
     resize: none;
 }
 
 /* Each field wrapper */
-.field,
-.message {
+.field, .message {
     position: relative;
     padding-bottom: 24px;
     display: flex;
@@ -103,11 +93,9 @@ button {
     justify-content: center;
     margin: auto;
     margin-top: 1rem;
-    font-weight: normal;
 }
 
-button:disabled,
-button[disabled] {
+button:disabled, button[disabled] {
     border: 1px solid #262d22;
     background-color: #262d22;
     color: white;
