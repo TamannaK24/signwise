@@ -1,7 +1,6 @@
 import './App.css';
 
 import Navbar from './components/Navbar';
-import Sidebar from './components/Sidebar';
 import Homepage from "./pages/Homepage";
 import Learn from "./pages/Learn";
 import Features from "./pages/Features";
@@ -9,7 +8,6 @@ import AboutUs from "./pages/AboutUs";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Contact from './pages/Contact';
-import Footer from './components/Footer';
 import Goals from "./pages/Goals";
 import Lessons from "./pages/Lessons";
 import Settings from "./pages/Settings";
@@ -18,6 +16,7 @@ import GuidedHands from './lessonsPages/guidedHands';
 import FingerSpellFocus from './lessonsPages/fingerSpellFocus';
 import WordsToText from './lessonsPages/wordsToText';
 import SignToText from './lessonsPages/signToText';
+import STTLevel from './lessonsPages/STTLevel';
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -43,9 +42,9 @@ function App() {
           <Route path="/finger-spell-focus" element={<FingerSpellFocus />} />
           <Route path="/words-to-text" element={<WordsToText />} />
           <Route path="/sign-to-text" element={<SignToText />} />
+          <Route path="/stt-level" element={<STTLevel />} />
         </Routes>
       </div>
-      <Footer />
     </>
   );
 }
