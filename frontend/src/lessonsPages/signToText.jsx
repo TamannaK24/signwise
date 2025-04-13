@@ -1,6 +1,6 @@
 import React from 'react';
 import Sidebar from '../components/Sidebar';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import "../signToText.css";
 
 import img1 from "../assets/question1.png";
@@ -23,7 +23,7 @@ const levels = [
 ];
 
 const level1 = [
-  { signImg: img1, answer: "dog", hint: "Begins with S" },
+  { signImg: img1, answer: "dog", hint: "Begins with D" },
   { signImg: img2, answer: "blue", hint: "It's a color" },
   { signImg: img3, answer: "skate", hint: "Ends with E" },
   { signImg: img4, answer: "change", hint: "This is an action" },
@@ -36,7 +36,7 @@ const level1 = [
 ];
 
 const level2 = [
-  { signImg: img1, answer: "dog", hint: "Begins with S" },
+  { signImg: img1, answer: "dog", hint: "Begins with D" },
   { signImg: img2, answer: "blue", hint: "It's a color" },
   { signImg: img3, answer: "skate", hint: "Ends with E" },
   { signImg: img4, answer: "change", hint: "This is an action" },
@@ -49,7 +49,7 @@ const level2 = [
 ];
 
 const level3 = [
-  { signImg: img1, answer: "dog", hint: "Begins with S" },
+  { signImg: img1, answer: "dog", hint: "Begins with D" },
   { signImg: img2, answer: "blue", hint: "It's a color" },
   { signImg: img3, answer: "skate", hint: "Ends with E" },
   { signImg: img4, answer: "change", hint: "This is an action" },
@@ -62,7 +62,7 @@ const level3 = [
 ];
 
 const level4 = [
-  { signImg: img1, answer: "dog", hint: "Begins with S" },
+  { signImg: img1, answer: "dog", hint: "Begins with D" },
   { signImg: img2, answer: "blue", hint: "It's a color" },
   { signImg: img3, answer: "skate", hint: "Ends with E" },
   { signImg: img4, answer: "change", hint: "This is an action" },
@@ -76,6 +76,21 @@ const level4 = [
 
 
 function SignToText() {
+  const navigate = useNavigate();
+
+  const handleLevelClick = (levelNum) => {
+    let selectedLevel;
+    switch (levelNum) {
+      case 1: selectedLevel = level1; break;
+      case 2: selectedLevel = level2; break;
+      case 3: selectedLevel = level3; break;
+      case 4: selectedLevel = level4; break;
+      default: selectedLevel = []; break;
+    }
+
+    navigate('/sign-to-text/level', { state: { questions: selectedLevel } });
+  };
+  
   return (
     <div className="bg">
       <Sidebar />
@@ -93,7 +108,11 @@ function SignToText() {
         
         <div className="level-grid">
           {levels.map((level, index) => (
-            <div key={index} className={`level-card ${level.status.toLowerCase()}`}>
+            <div
+              key={index}
+              className={`level-card ${level.status.toLowerCase()}`}
+              onClick={() => level.status !== "Locked" && handleLevelClick(level.number)}
+            >
               <div className="level-header">
                 <h2>{`Level ${level.number}`}</h2>
                 <span className={`badge ${level.status}`}>{level.status}</span>
