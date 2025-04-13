@@ -42,7 +42,7 @@ function App() {
           <Route path="/finger-spell-focus" element={<FingerSpellFocus />} />
           <Route path="/words-to-text" element={<WordsToText />} />
           <Route path="/sign-to-text" element={<SignToText />} />
-          <Route path="/stt-level" element={<STTLevel />} />
+          <Route path="/sign-to-text/level" element={<STTLevel />} />
         </Routes>
       </div>
     </>
