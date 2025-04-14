@@ -29,12 +29,16 @@
 .words-to-txt-container {
     width: calc(100% - 250px);
     margin-bottom: 4rem;
-    
+    text-align: center;
 }
 
 .prompt {
     margin-top: 4rem;
     background-color: transparent;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
 .h2 {
@@ -95,4 +99,12 @@
     align-items: center;
     font-size: 10rem;
 
+}
+
+.box1.correct,
+.box2.correct,
+.box3.correct {
+    /* background-color: #40560D;
+    color: #E1E2B6; */
+    border: 5px solid #40560D;
 }
