@@ -47,6 +47,13 @@ fieldset {
     margin: 0;
 }
 
+fieldset label, .field label {
+    text-align: left;
+    color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
 /* Input styles */
 input, textarea, select {
     border: 1px solid #E1E2B6;
