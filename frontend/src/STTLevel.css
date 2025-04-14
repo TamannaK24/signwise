@@ -1,0 +1,262 @@
+.bg {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 2rem 3rem;
+    color: #19360A;
+}
+
+.title {
+    background-color: inherit;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.title h1 {
+    background-color: inherit;
+    color: #19360A;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.body {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: inherit;
+    color:#19360A;
+    padding: 2rem;
+    margin-top: 2rem;
+    gap: 100px;
+}
+
+.body h2 {
+    background-color: inherit;
+    padding-bottom: 2rem;
+}
+
+.body h3 {
+    align-items: center;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: 50%;
+    font-size: medium;
+    color: white;
+}
+  
+.body .correct {
+    width: 100%;
+    background-color: rgb(138, 247, 138);
+    color: green;
+}
+  
+.body .incorrect {
+    width: 100%;
+    background-color: rgb(247, 138, 138);
+    color: #360a0a;
+}
+
+.body img {
+    margin-top: 2rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.body input {
+    margin-top: 2rem;
+    width: 100%;
+    color:#19360A;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 600px;
+}
+
+.body input::placeholder {
+    color:#516B13;
+    font-weight: 500;
+}
+
+.body button {
+    margin-top: 2rem;
+}
+
+.body p {
+    background-color: inherit;
+    text-size-adjust: small;
+    color:#516B13;
+}
+
+.hint {
+    background-color: inherit;
+    display: flex;
+    justify-content: right;
+}
+
+.hint a:hover, .hint p:hover {
+    transition: all;
+    font-style: 800;
+    color: #19360A;
+    text-decoration: underline;
+}
+
+.leftPanel {
+    background-color: inherit;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 700px;
+    width: 100%;
+    flex: 4;
+}
+
+.leftPanel h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.leftPanel input {
+    margin-bottom: 1rem;
+}
+
+.rightPanel {
+    background-color: inherit;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+  
+.widget, .streak {
+    background-color: #E1E2B6;
+    padding: 1rem;
+    border-radius: 12px;
+    min-width: 180px;
+    text-align: center;
+    box-shadow: 2px 5px 2px #6b5f4491;
+    margin: 0.5rem;
+    font-size: large;
+}
+
+.widget {
+    padding-bottom: 2rem;
+
+}
+
+.widget p {
+    color: #6B5F44;
+    text-align: left;
+    padding-left: 2rem;
+}
+
+.streak {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    gap: 10rem;
+}
+
+.streak p {
+    color: #6B5F44;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    gap: 0;
+    position: relative;
+}
+
+.footer p {
+    margin: 0;
+    padding: 0;
+    color: #516B13;
+}
+
+.progress-bar {
+    background-color: #E1E2B6;
+    height: 1rem;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 2px 5px 2px #6b5f4491;
+}
+  
+.progress-fill {
+    height: 100%;
+    background-color: #516B13;
+    transition: width 0.3s ease;
+}
+
+.gameNav {
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.gameNav button {
+    background-color: #516B13;
+    color: white;
+    border: #516B13;
+}
+
+.gameNav button:disabled {
+    background-color: #545252;
+    color: white;
+    border: #545252;
+}
+
+.nextQuestion, .nextQuestion:disabled {
+    padding: 1rem;
+    background-color: inherit;
+    border: inherit;
+    color: #516B13;
+}
+
+.nextQuestion:disabled {
+    color: #545252;
+}
+
+.gameNav img {
+    background-color: inherit;
+}
+
+.gameOver, .gameOver h2 {
+    background-color: inherit;
+    color: #19360A;
+    padding: 1rem;
+}
+
+.btn {
+    margin-top: 3rem;
+    padding: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border: 2px solid #E1E2B6;
+    border-radius: 10px;
+    background-color: #E1E2B6;
+    color: #516B13;
+    font-weight: 700;
+}
