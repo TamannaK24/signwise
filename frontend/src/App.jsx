@@ -17,6 +17,7 @@ import FingerSpellFocus from './lessonsPages/fingerSpellFocus';
 import WordsToText from './lessonsPages/wordsToText';
 import SignToText from './lessonsPages/signToText';
 import STTLevel from './lessonsPages/STTLevel';
+import GHLevel from './lessonsPages/GHLevel';
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -39,6 +40,7 @@ function App() {
 
           {/* Lesson pages */}
           <Route path="/guided-hands" element={<GuidedHands />} />
+          <Route path="/guided-hands/level" element={<GHLevel />} />
           <Route path="/finger-spell-focus" element={<FingerSpellFocus />} />
           <Route path="/words-to-text" element={<WordsToText />} />
           <Route path="/sign-to-text" element={<SignToText />} />
