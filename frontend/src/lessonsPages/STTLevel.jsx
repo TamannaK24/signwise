@@ -15,9 +15,10 @@ function STTLevel() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answered, setAnswered] = useState(false);
   const [userAnswer, setUserAnswer] = useState("");
-  const [hintVisible, setHintVisible] = useState(false);
+  const [hintsUsed, setHintsUsed] = useState(0);
   const [correctAnswer, setCorrectAnswer] = useState(false);
   const [gameOver, setGameOver] = useState(false);
+  const [streak, setStreak] = useState(0);
 
   const handleAnswerChange = (e) => {
     setUserAnswer(e.target.value);
@@ -32,10 +33,12 @@ function STTLevel() {
 
     if (userAnswer.trim().toLowerCase() === questions[currentQuestion].answer) {
       setCorrectAnswer(true);
+      setStreak(prev => prev + 1);
     } 
     
     else {
       setCorrectAnswer(false);
+      setStreak(0);
     }
   };
 
@@ -44,7 +47,7 @@ function STTLevel() {
       setCurrentQuestion(currentQuestion + 1);
       setAnswered(false);
       setUserAnswer("");
-      setHintVisible(false);
+      setHintsUsed(0);
       setCorrectAnswer(false);
     }
 
@@ -54,8 +57,17 @@ function STTLevel() {
     }
   };
 
-  const toggleHint = () => {
-    setHintVisible(!hintVisible);
+  const handleUseHint = () => {
+    if (hintsUsed < 3) {
+      setHintsUsed(prev => prev + 1);
+    }
+  };
+
+  const renderHints = () => {
+    const hintList = questions[currentQuestion].hints || [];
+    return hintList.slice(0, hintsUsed).map((hint, index) => (
+      <p key={index} className="hint-text">  {hint}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    ));
   };
 
   return (
@@ -78,7 +90,7 @@ function STTLevel() {
               <img src={questions[currentQuestion].signImg} height={200} width={900} alt="Question" />
               
               <div className="hint">
-                {!hintVisible ? "" : <p onClick={toggleHint}>{questions[currentQuestion].hint}</p>}
+                {renderHints()}
               </div>
               
               <input
@@ -102,17 +114,31 @@ function STTLevel() {
                 <p>Remaining Hints</p>
                 <div style={{ backgroundColor: 'inherit', display: 'flex', justifyContent: 'center', gap: '1.5rem', margin: '0.5rem' }}>
                   {[...Array(3)].map((_, i) => (
-                    <span key={i} style={{ width: '60px', height: '60px' }}><CIcon icon={cilLightbulb} style={{ backgroundColor: '#545252', color: 'white', padding: '10px', borderRadius: '4px' }} /></span>
+                    <span key={i} style={{ width: '60px', height: '60px' }}>
+                      <CIcon icon={cilLightbulb} style={{ backgroundColor: '#545252', color: 'white', padding: '10px', borderRadius: '4px' }} />
+                    </span>
                   ))}
                 </div>
-                <button onClick={toggleHint} style={{ marginTop: '1rem', backgroundColor: '#516B13', color: 'white', border: 'none', borderRadius: '8px', padding: '0.5rem 1rem' }}>
+                <button
+                  onClick={handleUseHint}
+                  disabled={hintsUsed >= 3}
+                  style={{
+                    marginTop: '1rem',
+                    backgroundColor: hintsUsed >= 3 ? '#888' : '#516B13',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '8px',
+                    padding: '0.5rem 1rem',
+                    cursor: hintsUsed >= 3 ? 'not-allowed' : 'pointer'
+                  }}
+                >
                   Use Hint
                 </button>
               </div>
 
               <div className="streak">
                 <p>Streak</p>
-                <p style={{ gap: '0.5rem'}} ><ImFire style={{ width: '30px', height: '30px', backgroundColor: 'inherit', color: '#6B5F44' }} />5</p>
+                <p style={{ gap: '0.5rem'}} ><ImFire style={{ width: '30px', height: '30px', backgroundColor: 'inherit', color: '#6B5F44' }} />{streak}</p>
               </div>
 
               <div className="gameNav">

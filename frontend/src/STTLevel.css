@@ -105,10 +105,9 @@
 }
 
 .hint a:hover, .hint p:hover {
-    transition: all;
     font-style: 800;
     color: #19360A;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .leftPanel {
