@@ -22,6 +22,7 @@
     justify-content: center;
     margin-top: 40px;
     margin-right: 2rem;
+    overflow-y: scroll;
 }
 
 .goals-title {

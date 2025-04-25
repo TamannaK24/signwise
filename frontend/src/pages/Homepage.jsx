@@ -10,7 +10,10 @@ function Homepage() {
           <p>Companion</p>
         </div>
         <div className="button-section">
-          <button className="get-started-btn" type="button">Get Started</button>
+          <a href="/learn">
+            <button className="get-started-btn" type="button">Get Started</button>
+          </a>
+          
         </div>
       </div>
     </div>

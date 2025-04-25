@@ -12,6 +12,7 @@
     flex-grow: 1;
     padding: 2rem 3rem;
     color: #19360A;
+    overflow-y: scroll;
 }
 
 .title {
@@ -152,7 +153,6 @@
 
 .widget {
     padding-bottom: 2rem;
-
 }
 
 .widget p {
@@ -245,6 +245,11 @@
 .gameOver, .gameOver h2 {
     background-color: inherit;
     color: #19360A;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    justify-self: center;
+    align-items: center;
     padding: 1rem;
 }
 

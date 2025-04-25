@@ -12,13 +12,13 @@
     flex-grow: 1;
     padding: 2rem 3rem;
     color: #19360A;
+    overflow-y: scroll;
 }
 
 .title {
     background-color: inherit;
     justify-content: center;
     padding: 1rem;
-    margin-top: 2rem;
 }
 
 .title h1 {
@@ -122,6 +122,7 @@
     max-width: 700px;
     width: 100%;
     flex: 4;
+    margin-top: -2rem;
 }
 
 .leftPanel h2 {
@@ -154,7 +155,6 @@
 
 .widget {
     padding-bottom: 2rem;
-
 }
 
 .widget p {
@@ -182,6 +182,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 6rem;
     width: 100%;
     max-width: 600px;
     gap: 0;
@@ -249,6 +250,11 @@
 .gameOver, .gameOver h2 {
     background-color: inherit;
     color: #19360A;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    justify-self: center;
+    align-items: center;
     padding: 1rem;
 }
 

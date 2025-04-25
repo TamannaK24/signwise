@@ -13,35 +13,13 @@ function GHLevel() {
   
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answered, setAnswered] = useState(false);
-  const [userAnswer, setUserAnswer] = useState("");
   const [correctAnswer, setCorrectAnswer] = useState(false);
   const [gameOver, setGameOver] = useState(false);
-
-  const handleAnswerChange = (e) => {
-    setUserAnswer(e.target.value);
-    
-    if (answered) {
-      setAnswered(false);
-    }
-  };
-
-  const checkAnswer = () => {
-    setAnswered(true);
-
-    if (userAnswer.trim().toLowerCase() === questions[currentQuestion].answer) {
-      setCorrectAnswer(true);
-    } 
-    
-    else {
-      setCorrectAnswer(false);
-    }
-  };
 
   const nextQuestion = () => {
     if (currentQuestion + 1 < questions.length) {
       setCurrentQuestion(currentQuestion + 1);
       setAnswered(false);
-      setUserAnswer("");
       setCorrectAnswer(false);
     }
 
@@ -69,26 +47,8 @@ function GHLevel() {
               )}
               
               <div className="video">
-                <YouTubeEmbed startTime={questions[currentQuestion].video} />
+                <YouTubeEmbed startTime={questions[currentQuestion].start} endTime={questions[currentQuestion].end} />
               </div>
-             
-              
-              <div className="gameNav">
-                <button
-                  onClick={checkAnswer}
-                  disabled={answered}
-                  type="submit"
-                >
-                  Check Answer
-                </button>
-              </div>
-
-              <input
-                type="text"
-                value={userAnswer}
-                onChange={handleAnswerChange}
-                placeholder="Enter answer here.."
-              />
 
               <div className="footer">
                 <div className="progress-bar">
@@ -103,6 +63,16 @@ function GHLevel() {
               <div className="streak">
                 <p>Streak</p>
                 <p style={{ gap: '0.5rem'}} ><ImFire style={{ width: '30px', height: '30px', backgroundColor: 'inherit', color: '#6B5F44' }} />5</p>
+              </div>
+
+              <div className="gameNav">
+                <button
+                  onClick={nextQuestion}
+                  //disabled={answered}
+                  type="submit"
+                >
+                  Check Answer
+                </button>
               </div>
               
               {correctAnswer && (
