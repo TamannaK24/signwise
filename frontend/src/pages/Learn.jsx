@@ -37,7 +37,7 @@ function Learn() {
                   <div id="percent-number">65%</div>
                 </div>
               </div>
-              <svg width="400px" height="400px">
+              <svg className ="circle-fill" width="400px" height="400px">
                 <circle cx="200" cy="200" r="185"/>
               </svg>
             </div>
