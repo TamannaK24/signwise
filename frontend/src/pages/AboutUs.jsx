@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import '../AboutUs.css';
 
 function AboutUs() {
-
     return (
       <>
       <h1>About Us</h1>

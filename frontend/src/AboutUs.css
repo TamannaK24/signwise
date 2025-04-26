@@ -1,5 +1,4 @@
 .container {
-  padding-left: 1rem;
   overflow-y: scroll;
 }
 
@@ -11,14 +10,13 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-direction: row;
   text-align: center;
 }
 
 .column {
   float: none;
   width: 33.33%;
-  padding: 1em;
   padding-top: 2.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -27,6 +25,7 @@ h1 {
 .column h2 {
   display: flex;
   justify-content: center;
+  color: white;
 }
   
 .row:after {

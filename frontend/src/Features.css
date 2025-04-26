@@ -1,0 +1,40 @@
+.container {
+    padding-bottom: 2rem;
+    overflow-y: scroll;
+}
+  
+h1 {
+    text-align: center;
+    margin-bottom: 8rem;
+}
+  
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    gap: 8rem;
+    margin-left: 8rem;
+    margin-bottom: 5rem;
+}
+
+.row img {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+  
+.column h2 {
+    display: flex;
+    justify-content: center;
+    color: white;
+}

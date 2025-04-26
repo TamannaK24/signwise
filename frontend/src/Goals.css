@@ -1,100 +1,228 @@
-.goals-bg {
+.bg {
     background-color: white;
     height: 100vh;
     width: 100%;
     background-size: cover;
-    padding: 0;
-    margin: 0;
     position: fixed;
     top : 0;
     display: flex;
 }
 
-.goals-content {
+.content {
     display: flex;
     background-color: white;
-    height: calc(100vh-50px); /*same top/bot padding as sidebar*/
+    height: calc(100vh - 50px); /*same top/bot padding as sidebar*/
     box-sizing: border-box;
     margin-left: 250px;
     padding: 20px;
     width: calc(100% - 250px); /* sizebar is 250px  */
     overflow: hidden;
     justify-content: center;
-    margin-top: 40px;
-    margin-right: 2rem;
     overflow-y: scroll;
 }
 
-.goals-title {
-    background-color: transparent;
+.title {
+    background-color: inherit;
     display: flex;
-    position: fixed;
+    padding-bottom: 2rem;
     height: 100px;
 }
 
-.goals-title h1 {
-    background-color: transparent;
+.title h1 {
+    background-color: inherit;
     color: #19360A;
 }
 
-.goals-wrapper > div {
-    width: 33.33%;
+.wrapper {
+    background-color: inherit;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 1rem;
 }
 
-.goals-wrapper {
-    background-color: transparent;
-    width: 100%;
-    margin-top: 90px;
-    justify-content: center;
-    text-align: center;
-    display: flex;
-    box-sizing: border-box;
-    justify-content: space-between;
-    gap: 25px;
-}
-
-.goals1 {
-    background-color: #E1E2B6;
-}
-
-.goals2 {
-    background-color: #E1E2B6;
-}
-
-.goals3 {
-    background-color: #E1E2B6;
-}
-
-.goals1,
-.goals2,
-.goals3 {
-    border-radius: 10px;
-    height: 100%;
-    box-shadow: 8px 8px  #516B13;
-}
-
-.goals-wrapper h2 {
-    background-color: transparent;
+.wrapper h2 {
+    background-color: inherit;
     font-size: 1.5rem;
     font-weight: 400;
     color: #19360A;
 }
 
-.goal-item {
+.column {
+    background-color: inherit;
+    flex: 1 1 0;
     display: flex;
     flex-direction: column;
-    text-align:center;
-    background-color: transparent;
-    width: 100%;
-    justify-content: space-between;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-width: 400px; 
 }
 
-
-.goal-item h2 {
-    margin-bottom: 0;
+.column h2 {
     color:#19360A;
-
 }
+
+.widgets {
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex: 1;
+    gap: 1rem;
+}
+
+.box-title {
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.leaderboard, .leaderboard-list li, .leaderboard-list li strong, .achievement p, .goals h3, .goals > div, .goals p, .level-buttons {
+    background-color: inherit;
+}
+
+.goals {
+    background-color: #E1E2B6;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 8px 8px  #516B13;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.current-goals {
+    background-color: inherit;
+}
+
+.goal-list {
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+.goal-list li {
+    list-style: none;
+}
+  
+.goal-item {
+    background-color: inherit;
+    text-align: left;
+    color: #19360A;
+    font-weight: 500;
+}
+  
+.goal-item label{
+    background-color: inherit;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    cursor: pointer;
+}
+  
+.goal-item input[type=checkbox]{
+    accent-color:#516B13;     /* dark green check */
+    width: 1.5rem;
+    height: 1.5rem;
+}
+  
+.goal-item.done{
+    opacity: .55;
+    text-decoration: line-through;
+}
+
+.todo-input{
+    background-color: inherit;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    padding: .5rem;
+    border-radius: 8px;
+}
+  
+.todo-input input{
+    border: 1px solid #19360A;
+    border-radius: 8px;
+    color: #19360A;
+}
+  
+.todo-input button{
+    background:#516B13;
+    color:#fff;
+    width: 20%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.leaderboard-list {
+    background-color: inherit;
+    padding: 1rem;
+    text-align: left;
+}
+  
+.level-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.level-buttons button {
+    width: 100%;
+}
+  
+.level {
+    background-color: #516B13;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 6px;
+}
+  
+.level.active {
+    background-color: #19360A;
+}
+  
+.achievement {
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border: #516B13 solid 2px;
+    border-radius: 10px;
+    margin: 1rem;
+    font-size: 1rem;
+}
+  
+.achievement.inactive {
+    opacity: 0.4;
+}
+  
+.streak-days {
+    background-color: inherit;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+  
+.day {
+    background-color: #516B13;
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 6px;
+    line-height: 2rem;
+}
+  
+.day.active {
+    background-color: #19360A;
+}  
