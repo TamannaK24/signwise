@@ -1,4 +1,5 @@
 import '../Homepage.css'
+import { Link } from 'react-router-dom';
 
 function Homepage() {
   return (
@@ -10,10 +11,10 @@ function Homepage() {
           <p>Companion</p>
         </div>
         <div className="button-section">
-          <a href="/learn">
+          <Link to="/SignUp">
             <button className="get-started-btn" type="button">Get Started</button>
-          </a>
-          
+          </Link>
+
         </div>
       </div>
     </div>
