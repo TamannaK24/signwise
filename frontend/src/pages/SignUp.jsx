@@ -1,5 +1,6 @@
 import { useState } from "react";
 import '../Login.css'; // Reusing the same styles
+import axios from 'axios'
 
 function SignUp() {
     const [email, setEmail] = useState("");
@@ -22,6 +23,11 @@ function SignUp() {
     const handleSubmit = (e) => {
         e.preventDefault();
         alert("Account created!");
+
+        axios.post('http://localhost:4000/register', {email, password})
+        .then(result => console.log(result))
+        .catch(err=> console.log(err))
+
         setEmail("");
         setPassword("");
         setConfirmPassword("");
