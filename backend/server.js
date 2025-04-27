@@ -2,13 +2,16 @@ require('dotenv').config()
 
 const express = require("express"); 
 const mongoose = require("mongoose");
+const cors = require("cors")
 const workoutRoutes = require("./routes/workouts.js")
+const UserModel = require("./models/User")
 
 // express app
 const app = express(); 
 
 // middleware
 app.use(express.json()) // to parse json data from the request body
+app.use(cors())
 
 app.use((req, res, next) => {
     console.log(req.path, req.method); 
@@ -34,6 +37,12 @@ mongoose.connect(process.env.MONGO_URI)
     .catch((error) => {
         console.log(error); 
     })
+
+app.post('/register', (req, res) => {
+    UserModel.create(req.body)
+    .then(users => res.json(users))
+    .catch(err => res.json(err))
+})
 
 
 
