@@ -1,11 +1,14 @@
 import { useState } from "react";
 import '../Login.css'; // Reusing the same styles
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const navigate = useNavigate()
 
     const validateEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -14,6 +17,7 @@ function SignUp() {
 
     const isFormValid = () => {
         return (
+            name.length >= 1 &&
             validateEmail(email) &&
             password.length >= 6 &&
             password === confirmPassword
@@ -24,10 +28,13 @@ function SignUp() {
         e.preventDefault();
         alert("Account created!");
 
-        axios.post('http://localhost:4000/register', {email, password})
-        .then(result => console.log(result))
+        axios.post('http://localhost:4000/register', {name, email, password})
+        .then(result => {console.log(result)
+        navigate('/login');
+        })
         .catch(err=> console.log(err))
 
+        setName("");
         setEmail("");
         setPassword("");
         setConfirmPassword("");
@@ -42,6 +49,17 @@ function SignUp() {
 
             <form onSubmit={handleSubmit}>
                 <fieldset>
+
+                    <div className="field">
+                        <label>Name <sup>*</sup></label>
+                        <input
+                            type="name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder="Name"
+                        />
+                    </div>
+
                     <div className="field">
                         <label>Email Address <sup>*</sup></label>
                         <input

@@ -1,9 +1,12 @@
 import { useState } from "react";
-import '../Login.css';
+import '../Login.css'; 
+import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -16,7 +19,22 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Logged in!");
+
+    axios.post('http://localhost:4000/login', {email, password})
+    .then(result => {
+      console.log(result)
+      if(result.data === "Success") {
+        
+        navigate('/learn');
+      } else {
+          alert("Incorrect login");
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Login failed");
+    })
+
     setEmail("");
     setPassword("");
   };
