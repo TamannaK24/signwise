@@ -42,16 +42,3 @@ button {
   font-family: inherit;
   cursor: pointer;
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #19360A;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #19360A;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
