@@ -1,5 +1,5 @@
 .container {
-  padding-left: 1rem;
+  overflow-y: scroll;
 }
 
 h1 {
@@ -10,30 +10,28 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-direction: row;
   text-align: center;
 }
 
 .column {
   float: none;
   width: 33.33%;
-  padding: 1em;
   padding-top: 2.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 
-.column h2 {
+.subtitle {
   display: flex;
   justify-content: center;
+  color: white !important;
 }
-  
+
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
-  
+
 .learn-btn {
   background-color: #E1E2B6;
   color: #516B13;
@@ -49,7 +47,7 @@ h1 {
   margin-top: 6rem;
   margin-bottom: 10rem;
 }
-  
+
 .learn-btn:hover {
   background-color: #516B13;
   color: #E1E2B6;

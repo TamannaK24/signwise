@@ -1,0 +1,145 @@
+.bg {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top : 0;
+    display: flex;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: calc(100vh-50px); /*same top/bot padding as sidebar*/
+    box-sizing: border-box;
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px); /* sizebar is 250px  */
+    overflow: hidden;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.title {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    top: 10%;
+    padding: 1rem;
+    height: 100px;
+}
+
+.title h1 {
+    background-color: inherit;
+    align-items: center;
+    color: #19360A;
+}
+
+.progress-bar {
+    width: 73%;
+    margin: 2rem;
+}
+
+.progress-bar p {
+    background-color: inherit;
+    color: #19360A;
+    margin-bottom: 0.4rem;
+    text-align: right;
+}
+  
+.progress-bar-bg {
+    background-color: #DCE2B7;
+    height: 16px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 2px 2px #6b5f4491;
+}
+  
+.progress-bar-fill {
+    height: 100%;
+    background-color: #4A5F10;
+    border-radius: 10px 0 0 10px;
+}
+  
+.level-grid {
+    background-color: inherit;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+  
+.level-card {
+    background-color: #E1E2B6;
+    color: #4A5F10;
+    border-radius: 10px;
+    padding: 1.2rem;
+    box-shadow: 2px 5px 2px #6b5f4491;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    min-height: 140px;
+    transition: transform 0.2s ease;
+}
+  
+.level-card:hover {
+    transform: translateY(-5px);
+}
+
+img {
+    background-color: inherit;
+}
+  
+.level-header, h2, span {
+    background-color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 13rem;
+}
+  
+.level-desc {
+    background-color: inherit;
+    font-size: 20px;
+}
+  
+.level-footer {
+    background-color: inherit;
+    display: flex;
+    justify-content: right;
+    font-weight: 600;
+    font-size: 20px;
+    color: #6B5F44;
+}
+
+.badge {
+    align-items: right;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+  
+.badge.Completed {
+    background-color: #516B13;
+    color: white;
+}
+  
+.badge.Ongoing {
+    background-color: #D4D4A3;
+    color: #4A5F10;
+    border: 2px solid #4A5F10;
+}
+  
+.badge.Locked {
+    background-color: #E0E0C4;
+    color: #9E9E9E;
+}
+  
+.level-card.locked {
+    opacity: 0.7;
+    pointer-events: none;
+}

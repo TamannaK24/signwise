@@ -20,6 +20,7 @@ import WTHLevelMenu from './lessonsPages/WTHLevelMenu';
 import WordsToText from './lessonsPages/wordsToText';
 import SignToText from './lessonsPages/signToText';
 import STTLevel from './lessonsPages/STTLevel';
+import GHLevel from './lessonsPages/GHLevel';
 
 
 import { Routes, Route } from 'react-router-dom';
@@ -44,7 +45,6 @@ function App() {
           {/* Lesson pages */}
           <Route path="/GHLevelMenu" element={<GHLevelMenu />} />
           <Route path="/guided-hands" element={<GuidedHands />} />
-          <Route path="/FSFLevelMenu" element={<FSFLevelMenu />} />
           <Route path="/finger-spell-focus" element={<FingerSpellFocus />} />
           <Route path="/WTHLevelMenu" element={<WTHLevelMenu />} />
           <Route path="/words-to-text" element={<WordsToText />} />

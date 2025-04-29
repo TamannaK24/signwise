@@ -70,12 +70,12 @@
 
 .box-title, .box-body, .arrow-img {
     flex: 1; /* divides into 3 equal sections */
+
 }
 
 .box-title {
     font-size: 1.5rem;
     background-color: transparent;
-    font-weight: normal;
 }
 
 .box-body {
@@ -88,7 +88,6 @@
 
 .box-text {
     font-size: 1rem;
-    margin: 0;
     background-color: transparent;
     font-weight: normal;
     color: #000000;

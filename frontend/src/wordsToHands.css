@@ -1,13 +1,17 @@
-.words-to-txt-container {
-    background-color: transparent;
-    color: #19360A; 
+.bg {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.content {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
-    margin-top: 90px;
-    box-sizing: border-box;
-    font-size: 0.5rem;
-    text-align: center;
+    flex-grow: 1;
+    color: #19360A;
+    overflow-y: scroll;
 }
 
 .finger-spell-focus-container {
@@ -48,20 +52,16 @@
     width: calc(100% - 250px);
     /* sizebar is 250px  */
     overflow: hidden;
-    justify-content: center;
-    margin-top: 40px;
-    margin-right: 2rem;
 }
-
-.words-to-txt-container {
-    width: calc(100% - 250px);
-    margin-bottom: 4rem;
-    text-align: center;
+.title {
+    background-color: inherit;
+    justify-content: center;
+    padding: 1rem;
 }
 
 .prompt {
     margin-top: 4rem;
-    background-color: transparent;
+    background-color: inherit;
     text-align: center;
     display: flex;
     align-content: center;
@@ -69,7 +69,7 @@
 }
 
 .h2 {
-    background-color: transparent;
+    background-color: inherit;
 }
 
 .prompt h2,
@@ -77,7 +77,7 @@
 .text-box,
 .word-boxes,
 .progress-bar {
-    background-color: transparent;
+    background-color: inherit;
 }
 
 .text-box {
@@ -104,12 +104,13 @@
     padding: 0;
     margin: 0.5rem;
 }
+
 .word-boxes {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 4rem;
-    margin-bottom: 4rem;
+    gap: 4rem;
 }
 
 .box1,
@@ -117,14 +118,15 @@
 .box3 {
     display: flex;
     justify-content: center;
-    width: 30%;
     border-radius: 10px;
     aspect-ratio: 1 / 1;
     background-color: #E1E2B6;
     box-shadow: 0px 5px 3px grey;
     text-align: center;
     align-items: center;
-    font-size: 10rem;
+    font-size: 8rem;
+    padding: 2rem;
+    width: 16rem;
 
 }
 
@@ -154,13 +156,4 @@
     
 }
 
-    /* max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    background-color: inherit;
-    color:#19360A;
-    padding: 2rem;
-    margin-top: 2rem;
-    gap: 100px; */
+

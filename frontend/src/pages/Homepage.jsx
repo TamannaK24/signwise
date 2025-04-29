@@ -14,7 +14,7 @@ function Homepage() {
           <Link to="/SignUp">
             <button className="get-started-btn" type="button">Get Started</button>
           </Link>
-          
+
         </div>
       </div>
     </div>

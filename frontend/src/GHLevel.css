@@ -19,7 +19,6 @@
     background-color: inherit;
     justify-content: center;
     padding: 1rem;
-    margin-top: 2rem;
 }
 
 .title h1 {
@@ -44,13 +43,14 @@
 
 .body h2 {
     background-color: inherit;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 .body h3 {
     align-items: center;
     margin: auto;
     padding: 1rem;
+    margin-bottom: 1rem;
     border-radius: 10px;
     max-width: 50%;
     font-size: medium;
@@ -106,9 +106,10 @@
 }
 
 .hint a:hover, .hint p:hover {
+    transition: all;
     font-style: 800;
     color: #19360A;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .leftPanel {
@@ -121,6 +122,7 @@
     max-width: 700px;
     width: 100%;
     flex: 4;
+    margin-top: -2rem;
 }
 
 .leftPanel h2 {
@@ -180,6 +182,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 6rem;
     width: 100%;
     max-width: 600px;
     gap: 0;
@@ -238,8 +241,10 @@
     color: #545252;
 }
 
-.gameNav img {
+.video {
     background-color: inherit;
+    width: 560px;
+    height: 315px;
 }
 
 .gameOver, .gameOver h2 {

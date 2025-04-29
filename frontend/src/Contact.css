@@ -1,12 +1,12 @@
 /* Contact section container */
 .contact {
     height: 100vh;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding-top: 2rem; /* reduce space above */
+    overflow-y: scroll;
 }
 
 /* Title styles */

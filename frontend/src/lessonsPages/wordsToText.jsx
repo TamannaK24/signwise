@@ -5,7 +5,7 @@ import '../wordsToHands.css';
 
 function wordsToText() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const[correctLetters, setCorrectLetters] = useState([false, false, false]);
+  const [correctLetters, setCorrectLetters] = useState([false, false, false]);
   const words = ['CAT', 'RED', 'EAT'];
 
   const markLetterCorrect = (letterIndex) => {
@@ -22,62 +22,55 @@ function wordsToText() {
     else {
       alert("not all letters are signed correctly");
     }
-    
+
   };
 
+  return (
+    <div className="bg">
+      <Sidebar />
+      <div className="content">
+        <div className="title">
+          <h1>Words to Hands</h1>
+        </div>
 
-
-    return (
-      <div className="goals-bg">
-        <Sidebar/>
-        <div className="wth-content">
-          <div className="goals-title">
-            <h1>Words to Hands</h1>
+        <div className='prompt'>
+          <h2>Sign the following word.</h2>
+        </div>
+        <div className="text-box">
+          <h2>{words[currentWordIndex]}</h2>
+        </div>
+        <div className="word-boxes">
+          <div
+            className={`box1 ${correctLetters[0] ? 'correct' : ''}`}
+            onClick={() => markLetterCorrect(0)}
+          >
+            {words[currentWordIndex][0]}
           </div>
-
-          <div className="words-to-txt-container">
-            <div className='prompt'>
-              <h2>Sign the following word.</h2></div>
-            <div className="text-box">
-              <h2>{words[currentWordIndex]}</h2>
-            </div>
- <div className="word-boxes">
-            <div
-              className={`box1 ${correctLetters[0] ? 'correct' : ''}`}
-              onClick={() => markLetterCorrect(0)}
-            >
-              {words[currentWordIndex][0]}
-            </div>
-            <div
-              className={`box2 ${correctLetters[1] ? 'correct' : ''}`}
-              onClick={() => markLetterCorrect(1)}
-            >
-              {words[currentWordIndex][1]}
-            </div>
-            <div
-              className={`box3 ${correctLetters[2] ? 'correct' : ''}`}
-              onClick={() => markLetterCorrect(2)}
-            >
-              {words[currentWordIndex][2]}
-            </div>
+          <div
+            className={`box2 ${correctLetters[1] ? 'correct' : ''}`}
+            onClick={() => markLetterCorrect(1)}
+          >
+            {words[currentWordIndex][1]}
           </div>
-
-          
-            <div className="progress-bar">
-              <ProgressBar/>
-            </div>
-          
-
-          <div className="check-sign">
-            <button onClick={checkAnswer}>test correctly signed</button>
-          </div>
-
-
+          <div
+            className={`box3 ${correctLetters[2] ? 'correct' : ''}`}
+            onClick={() => markLetterCorrect(2)}
+          >
+            {words[currentWordIndex][2]}
           </div>
         </div>
-      </div>
 
-    );
-  };
-  
-  export default wordsToText;
+        <div className="progress-bar">
+          <ProgressBar />
+        </div>
+
+        <div className="check-sign">
+          <button onClick={checkAnswer}>test correctly signed</button>
+        </div>
+      </div>
+    </div>
+
+  );
+};
+
+export default wordsToText;
