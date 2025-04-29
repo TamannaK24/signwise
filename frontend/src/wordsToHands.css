@@ -10,6 +10,33 @@
     text-align: center;
 }
 
+.finger-spell-focus-container {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    font-size: 0.5rem;
+}
+
+.letter-box {
+    width : 100%;
+    background-color: transparent;
+}
+
+.letter-box1 {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    aspect-ratio: 1 / 1;
+    background-color: #E1E2B6;
+    box-shadow: 0px 5px 3px grey;
+    text-align: center;
+    align-items: center;
+    font-size: 10rem;
+
+}
+
 .wth-content {
     display: flex;
     background-color: white;
@@ -103,8 +130,37 @@
 
 .box1.correct,
 .box2.correct,
-.box3.correct {
+.box3.correct,
+.letter-box1.correct {
     /* background-color: #40560D;
     color: #E1E2B6; */
     border: 5px solid #40560D;
 }
+
+.check-sign {
+    background-color: transparent;
+}
+
+.footer p {
+    background-color: transparent;
+    font-size: 1rem;    
+}
+
+.fsf-over {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: transparent;
+    
+}
+
+    /* max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: inherit;
+    color:#19360A;
+    padding: 2rem;
+    margin-top: 2rem;
+    gap: 100px; */

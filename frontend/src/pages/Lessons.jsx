@@ -13,7 +13,7 @@ function Lessons() {
         </div>
 
         <div className="lessons-boxes">
-          <Link to="/guided-hands" className="box">
+          <Link to="/GHLevelMenu" className="box">
             <div className="box-title">Guided Hands</div>
             <div className="box-body">
               <div className="box-text">
@@ -25,7 +25,7 @@ function Lessons() {
             </div>
           </Link>
 
-          <Link to="/finger-spell-focus" className="box">
+          <Link to="/FSFLevelMenu" className="box">
             <div className="box-title">Finger Spell Focus</div>
             <div className="box-body">
               <div className="box-text">
@@ -37,7 +37,7 @@ function Lessons() {
             </div>
           </Link>
 
-          <Link to="/words-to-text" className="box">
+          <Link to="/WTHLevelMenu" className="box">
             <div className="box-title">Words to Hands</div>
             <div className="box-body">
               <div className="box-text">
