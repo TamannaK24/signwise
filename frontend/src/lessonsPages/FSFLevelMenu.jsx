@@ -75,7 +75,7 @@ const level4 = [
 ];
 
 
-function WTHLevelMenu() {
+function FSFLevelMenu() {
   const navigate = useNavigate();
 
   const handleLevelClick = (levelNum) => {
@@ -130,4 +130,4 @@ function WTHLevelMenu() {
   );
   }
 
-  export default WTHLevelMenu;
+  export default FSFLevelMenu;

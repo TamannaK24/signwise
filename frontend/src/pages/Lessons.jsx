@@ -13,7 +13,7 @@ function Lessons() {
         </div>
 
         <div className="lessons-boxes">
-          <Link to="/GHLevelMenu" className="box">
+          <Link to="/guided-hands" className="box">
             <div className="box-title">Guided Hands</div>
             <div className="box-body">
               <div className="box-text">
