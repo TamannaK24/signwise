@@ -24,7 +24,7 @@
 }
 
 .letter-box {
-    width : 100%;
+    width: 100%;
     background-color: transparent;
 }
 
@@ -53,6 +53,7 @@
     /* sizebar is 250px  */
     overflow: hidden;
 }
+
 .title {
     background-color: inherit;
     justify-content: center;
@@ -111,6 +112,7 @@
     justify-content: space-between;
     margin-top: 4rem;
     gap: 4rem;
+    margin-bottom: 4rem;
 }
 
 .box1,
@@ -145,7 +147,7 @@
 
 .footer p {
     background-color: transparent;
-    font-size: 1rem;    
+    font-size: 1rem;
 }
 
 .fsf-over {
@@ -153,7 +155,5 @@
     flex-direction: row;
     width: 100%;
     background-color: transparent;
-    
+
 }
-
-

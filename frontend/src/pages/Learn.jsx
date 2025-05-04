@@ -1,5 +1,6 @@
 import Sidebar from '../components/Sidebar';
 import '../Dashboard.css';
+import '../Dashboard.css';
 
 function Learn() {
   return (

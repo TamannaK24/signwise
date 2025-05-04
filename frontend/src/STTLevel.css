@@ -36,7 +36,7 @@
     justify-content: space-between;
     align-items: flex-start;
     background-color: inherit;
-    color:#19360A;
+    color: #19360A;
     padding: 2rem;
     margin-top: 2rem;
     gap: 100px;
@@ -56,13 +56,13 @@
     font-size: medium;
     color: white;
 }
-  
+
 .body .correct {
     width: 100%;
     background-color: rgb(138, 247, 138);
     color: green;
 }
-  
+
 .body .incorrect {
     width: 100%;
     background-color: rgb(247, 138, 138);
@@ -78,14 +78,14 @@
 .body input {
     margin-top: 2rem;
     width: 100%;
-    color:#19360A;
+    color: #19360A;
     padding: 1rem;
     border-radius: 8px;
     max-width: 600px;
 }
 
 .body input::placeholder {
-    color:#516B13;
+    color: #516B13;
     font-weight: 500;
 }
 
@@ -96,7 +96,7 @@
 .body p {
     background-color: inherit;
     text-size-adjust: small;
-    color:#516B13;
+    color: #516B13;
 }
 
 .hint {
@@ -105,7 +105,8 @@
     justify-content: right;
 }
 
-.hint a:hover, .hint p:hover {
+.hint a:hover,
+.hint p:hover {
     font-style: 800;
     color: #19360A;
     text-decoration: none;
@@ -139,8 +140,9 @@
     flex-direction: column;
     gap: 1rem;
 }
-  
-.widget, .streak {
+
+.widget,
+.streak {
     background-color: #E1E2B6;
     padding: 1rem;
     border-radius: 12px;
@@ -201,7 +203,7 @@
     overflow: hidden;
     box-shadow: 2px 5px 2px #6b5f4491;
 }
-  
+
 .progress-fill {
     height: 100%;
     background-color: #516B13;
@@ -227,7 +229,8 @@
     border: #545252;
 }
 
-.nextQuestion, .nextQuestion:disabled {
+.nextQuestion,
+.nextQuestion:disabled {
     padding: 1rem;
     background-color: inherit;
     border: inherit;
@@ -242,7 +245,8 @@
     background-color: inherit;
 }
 
-.gameOver, .gameOver h2 {
+.gameOver,
+.gameOver h2 {
     background-color: inherit;
     color: #19360A;
     margin-top: 3rem;

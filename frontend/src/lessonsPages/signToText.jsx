@@ -110,7 +110,7 @@ function SignToText() {
 
     navigate('/sign-to-text/level', { state: { questions: selectedLevel } });
   };
-  
+
   return (
     <div className="bg">
       <Sidebar />
@@ -125,7 +125,7 @@ function SignToText() {
             <div className="progress-bar-fill" style={{ width: '50%' }}></div>
           </div>
         </div>
-        
+
         <div className="level-grid">
           {levels.map((level, index) => (
             <div
@@ -139,7 +139,7 @@ function SignToText() {
               </div>
               <p className="level-desc">{level.description}</p>
               <div className="level-footer">
-                <span>{level.status === "Locked"  ? "Begin" : "Learn"}</span>
+                <span>{level.status === "Locked" ? "Begin" : "Learn"}</span>
                 <span>{level.status === "Locked" ? "🔒" : <img height={40} src={arrow} />}</span>
               </div>
             </div>
@@ -148,6 +148,6 @@ function SignToText() {
       </div>
     </div>
   );
-  }
+}
 
-  export default SignToText;
+export default SignToText;

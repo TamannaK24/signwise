@@ -5,7 +5,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 2rem; /* reduce space above */
+    padding-top: 2rem;
+    /* reduce space above */
     overflow-y: scroll;
 }
 
@@ -47,7 +48,16 @@ fieldset {
     margin: 0;
 }
 
-fieldset label, .field label {
+fieldset label,
+.field label {
+    text-align: left;
+    color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+fieldset label,
+.field label {
     text-align: left;
     color: white;
     padding-left: 5px;
@@ -55,50 +65,66 @@ fieldset label, .field label {
 }
 
 /* Input styles */
-input, textarea, select {
+input,
+textarea,
+select {
     border: 1px solid #E1E2B6;
-    border-radius: 5px;
-    background-color: #E1E2B6;
-    color: black;
-    height: 3rem;
-    padding: 1rem;
-    font-size: 1rem;
-}
 
-textarea {
-    height: 6rem;
-    resize: none;
-}
+    input,
+    textarea,
+    select {
+        border: 1px solid #E1E2B6;
+        border-radius: 5px;
+        background-color: #E1E2B6;
+        color: black;
+        color: black;
+        height: 3rem;
+        padding: 1rem;
+        font-size: 1rem;
+    }
 
-/* Each field wrapper */
-.field, .message {
-    position: relative;
-    padding-bottom: 24px;
-    display: flex;
-    flex-direction: column;
-}
+    textarea {
+        height: 6rem;
+        resize: none;
+    }
 
-/* Submit button */
-button {
-    padding: 12px;
-    width: 240px;
-    background-color: #E1E2B6;
-    color: #516B13;
-    border: 2px solid #E1E2B6;
-    border-radius: 10px;
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    margin-top: 1rem;
-}
+    /* Each field wrapper */
+    .field,
+    .message {
 
-button:disabled, button[disabled] {
-    border: 1px solid #262d22;
-    background-color: #262d22;
-    color: white;
-    cursor: not-allowed;
-    box-shadow: none;
-}
+        .field,
+        .message {
+            position: relative;
+            padding-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Submit button */
+        button {
+            padding: 12px;
+            width: 240px;
+            background-color: #E1E2B6;
+            color: #516B13;
+            border: 2px solid #E1E2B6;
+            border-radius: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            margin-top: 1rem;
+        }
+
+        button:disabled,
+        button[disabled] {
+
+            button:disabled,
+            button[disabled] {
+                border: 1px solid #262d22;
+                background-color: #262d22;
+                color: white;
+                cursor: not-allowed;
+                box-shadow: none;
+            }

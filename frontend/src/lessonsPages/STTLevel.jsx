@@ -11,7 +11,7 @@ import "../STTLevel.css";
 function STTLevel() {
   const location = useLocation();
   const questions = location.state?.questions || [];
-  
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answered, setAnswered] = useState(false);
   const [userAnswer, setUserAnswer] = useState("");
@@ -22,7 +22,7 @@ function STTLevel() {
 
   const handleAnswerChange = (e) => {
     setUserAnswer(e.target.value);
-    
+
     if (answered) {
       setAnswered(false);
     }
@@ -34,8 +34,8 @@ function STTLevel() {
     if (userAnswer.trim().toLowerCase() === questions[currentQuestion].answer) {
       setCorrectAnswer(true);
       setStreak(prev => prev + 1);
-    } 
-    
+    }
+
     else {
       setCorrectAnswer(false);
       setStreak(0);
@@ -77,7 +77,7 @@ function STTLevel() {
         <div className="title">
           <h1>Sign To Text</h1>
         </div>
-        { !gameOver &&
+        {!gameOver &&
           <div className="body">
             <div className="leftPanel">
               <h2>What word is spelled below?</h2>
@@ -86,13 +86,13 @@ function STTLevel() {
                   {correctAnswer ? "Correct!" : "Incorrect, try again!"}
                 </h3>
               )}
-              
+
               <img src={questions[currentQuestion].signImg} height={200} width={900} alt="Question" />
-              
+
               <div className="hint">
                 {renderHints()}
               </div>
-              
+
               <input
                 type="text"
                 value={userAnswer}
@@ -138,7 +138,7 @@ function STTLevel() {
 
               <div className="streak">
                 <p>Streak</p>
-                <p style={{ gap: '0.5rem'}} ><ImFire style={{ width: '30px', height: '30px', backgroundColor: 'inherit', color: '#6B5F44' }} />{streak}</p>
+                <p style={{ gap: '0.5rem' }} ><ImFire style={{ width: '30px', height: '30px', backgroundColor: 'inherit', color: '#6B5F44' }} />{streak}</p>
               </div>
 
               <div className="gameNav">
@@ -150,7 +150,7 @@ function STTLevel() {
                   Check Answer
                 </button>
               </div>
-              
+
               {correctAnswer && (
                 <button
                   className="nextQuestion"
@@ -164,15 +164,15 @@ function STTLevel() {
             </div>
           </div>
         }
-        
-        { gameOver && 
+
+        {gameOver &&
           <div className="gameOver">
             <h2>Game Over</h2>
             <h2>Thanks for playing!</h2>
             <Link className="btn" to="/sign-to-text">BACK TO LESSONS</Link>
           </div>
         }
-        
+
       </div>
     </div>
   );

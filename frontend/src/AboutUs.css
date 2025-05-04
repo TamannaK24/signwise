@@ -46,10 +46,13 @@ h1 {
   margin: auto;
   margin-top: 6rem;
   margin-bottom: 10rem;
+  margin-top: 6rem;
+  margin-bottom: 10rem;
 }
 
 .learn-btn:hover {
   background-color: #516B13;
+  color: #E1E2B6;
   color: #E1E2B6;
   border-color: #E1E2B6;
 }

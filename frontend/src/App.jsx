@@ -50,6 +50,8 @@ function App() {
           <Route path="/words-to-text" element={<WordsToText />} />
           <Route path="/sign-to-text" element={<SignToText />} />
           <Route path="/sign-to-text/level" element={<STTLevel />} />
+          <Route path="/sign-to-text" element={<SignToText />} />
+          <Route path="/sign-to-text/level" element={<STTLevel />} />
         </Routes>
       </div>
     </>
