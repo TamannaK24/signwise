@@ -1,8 +1,5 @@
 import { useState } from 'react';
-import { useState } from 'react';
 import Sidebar from '../components/Sidebar';
-import ProgressBar from '../components/ProgressBar';
-import '../wordsToHands.css';
 import ProgressBar from '../components/ProgressBar';
 import '../wordsToHands.css';
 
