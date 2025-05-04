@@ -1,17 +1,23 @@
 import { useState } from "react";
 import '../Login.css'; // Reusing the same styles
-import axios from 'axios'
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+
 
 function SignUp() {
+    //react's use state variables for email, password and confirm password
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const navigate = useNavigate();
 
+    //email validation function to check if the email is in the correct format
     const validateEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     };
 
+    //returns true if the email is valid, password is at least 6 characters long and the password and confirm password match
     const isFormValid = () => {
         return (
             validateEmail(email) &&
@@ -20,26 +26,40 @@ function SignUp() {
         );
     };
 
+    //Handles form submission
+    //stops page from refreshing, sends post request to backend with email and password
+    //logs whatever the backend returns
+    //clears the form 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert("Account created!");
 
-        axios.post('http://localhost:4000/register', {email, password})
-        .then(result => console.log(result))
-        .catch(err=> console.log(err))
+        axios.post("http://localhost:4000/api/register", { email, password })
 
-        setEmail("");
-        setPassword("");
-        setConfirmPassword("");
+            .then(result => {
+                console.log(result);
+                alert("Account created!");
+                navigate("/learn");
+
+                setEmail("");
+                setPassword("");
+                setConfirmPassword("");
+            })
+            .catch(err => {
+                console.log(err);
+                alert("Error creating account. Please try again.");
+            });
+
     };
 
+
+    //passes the handleSubmit function to the form on submit event
+    //collects the email, password and confirm password from the user
     return (
         <div className="login">
             <h1>Sign Up</h1>
             <h2 className="sub-heading">
                 Create an account to get started with SignWise!
             </h2>
-
             <form onSubmit={handleSubmit}>
                 <fieldset>
                     <div className="field">

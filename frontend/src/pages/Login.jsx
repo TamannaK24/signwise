@@ -1,9 +1,12 @@
 import { useState } from "react";
 import '../Login.css';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -14,11 +17,21 @@ function Login() {
     return validateEmail(email) && password.length >= 6;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Logged in!");
-    setEmail("");
-    setPassword("");
+    try {
+      const res = await axios.post("http://localhost:4000/api/login", { email, password })
+      // res.data will be "Success"
+      navigate("/learn");
+      alert(res.data);
+      setEmail("");
+      setPassword("");
+      // TODO: redirect or set auth state here
+    } catch (err) {
+      const msg = err.response?.data || err.message;
+      console.error("Login failed:", msg);
+      alert("Login error: " + msg);
+    }
   };
 
   return (
