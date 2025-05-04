@@ -1,0 +1,110 @@
+.words-to-txt-container {
+    background-color: transparent;
+    color: #19360A; 
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    margin-top: 90px;
+    box-sizing: border-box;
+    font-size: 0.5rem;
+    text-align: center;
+}
+
+.wth-content {
+    display: flex;
+    background-color: white;
+    height: calc(100vh-50px);
+    /*same top/bot padding as sidebar*/
+    box-sizing: border-box;
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    /* sizebar is 250px  */
+    overflow: hidden;
+    justify-content: center;
+    margin-top: 40px;
+    margin-right: 2rem;
+}
+
+.words-to-txt-container {
+    width: calc(100% - 250px);
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.prompt {
+    margin-top: 4rem;
+    background-color: transparent;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.h2 {
+    background-color: transparent;
+}
+
+.prompt h2,
+.text-box h2,
+.text-box,
+.word-boxes,
+.progress-bar {
+    background-color: transparent;
+}
+
+.text-box {
+    border: 4px solid #40560D;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    text-align: center;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
+    font-weight: 1000;
+
+    display: flex;
+    justify-content: center;
+    width: 160px;
+    margin: 0 auto;
+}
+
+.text-box h2 {
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    padding: 0;
+    margin: 0.5rem;
+}
+.word-boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.box1,
+.box2,
+.box3 {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    border-radius: 10px;
+    aspect-ratio: 1 / 1;
+    background-color: #E1E2B6;
+    box-shadow: 0px 5px 3px grey;
+    text-align: center;
+    align-items: center;
+    font-size: 10rem;
+
+}
+
+.box1.correct,
+.box2.correct,
+.box3.correct {
+    /* background-color: #40560D;
+    color: #E1E2B6; */
+    border: 5px solid #40560D;
+}

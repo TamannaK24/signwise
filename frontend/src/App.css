@@ -1,0 +1,137 @@
+.container {
+  padding-top: 5rem;
+  text-align: center;
+}
+
+.nav {
+  top: 0;
+  padding: 1rem;
+}
+
+.footer {
+  bottom: 0;
+  padding: 0.5rem;
+}
+
+.nav, .footer {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  color: #19360A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 2rem;
+  z-index: 1;
+}
+
+.site-title {
+  font-size: 2em;
+}
+
+.nav ul, .footer ul {
+  padding: 0;
+  padding-right: 2rem;
+  margin: 0;
+  gap: 2rem;
+  background-color: white;
+  display: flex;
+}
+
+.nav ul li, .footer ul li {
+  list-style: none;
+  background-color: inherit;
+}
+
+a {
+  font-weight: 500;
+  color: #19360A;
+  text-decoration: inherit;
+  background-color: inherit;
+}
+
+a:hover {
+  color: black;
+}
+
+.login-btn {
+  background-color: #516B13;
+  color:white;
+  border: #516B13 2px solid;
+  border-radius: 10px;
+  padding: 0.5rem 1.5rem;
+  transition: 0.4s;
+}
+
+.login-btn:hover {
+  background-color: white;
+  color: #516B13;
+}
+
+.sidebar ul {
+  list-style: none;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+.wrapper .sidebar {
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  background: #516B13;
+  padding: 50px 0;
+  left: 0;
+  top: 50px;
+}
+
+
+.wrapper .sidebar ul li {
+  /* padding: 15px; */
+  border-bottom: 10px solid #516B13;
+  border-top: 10px solid #516B13;
+  color: white;
+  text-align: left;
+  width: 100%;
+}
+
+.wrapper .sidebar ul li a {
+  padding: 15px;
+  color: white;
+  display: block;
+  margin-left: 1rem;
+  margin-right: 2rem;
+  text-align: center;
+  font-weight: 400;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.wrapper .sidebar ul li:hover {
+  background: #40560D;
+  transition: 0.4s;
+}
+
+.wrapper .sidebar ul li.active-link {
+  background-color: #40560D;
+  display: block;
+}
+
+.wrapper .sidebar ul li a.active-link {
+  background: #40560D;
+  color: white;
+  pointer-events:none;
+  transition: none;
+}
+

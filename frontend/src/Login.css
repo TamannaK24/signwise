@@ -1,0 +1,138 @@
+.login {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.login h1 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.sub-heading {
+    font-size: medium;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Form layout */
+form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Fieldset setup */
+fieldset {
+    display: flex;
+    padding: 1rem;
+    border: none;
+    width: 480px;
+    flex-direction: column;
+    margin: 0;
+    background-color: transparent;
+}
+
+/* Input styling */
+input {
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: #E1E2B6;
+    color: black;
+    height: 3rem;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+/* Keep border white on focus */
+input:focus {
+    outline: none;
+    border: 1px solid white;
+    box-shadow: none;
+}
+
+/* Form field container */
+.field {
+    position: relative;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* left-align label and input */
+}
+
+/* Label styling */
+.field label {
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #19360A;
+}
+
+/* Forgot password link */
+.forgot-password {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    text-decoration: underline;
+    color: #19360A;
+    align-self: flex-end;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: white;
+}
+
+/* Submit button */
+button {
+    padding: 12px;
+    width: 240px;
+    background-color: #E1E2B6;
+    color: #516B13;
+    border: 2px solid #E1E2B6;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+/* Disabled button state */
+button:disabled,
+button[disabled] {
+    border: 1px solid #262d22;
+    background-color: #262d22;
+    color: white;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Signup text */
+.signup-text {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 2rem;
+    color: #19360A;
+}
+
+/* Link styling */
+.signup-text a {
+    color: #19360A;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for link */
+.signup-text a:hover {
+    color: white;
+}
