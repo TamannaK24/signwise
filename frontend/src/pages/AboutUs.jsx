@@ -2,33 +2,32 @@ import { Link } from 'react-router-dom';
 import '../AboutUs.css';
 
 function AboutUs() {
-
-    return (
-      <>
+  return (
+    <>
       <h1>About Us</h1>
       <div className="row">
         <div className="column">
-          <h2>Clear</h2>
+          <h2 className="subtitle">Clear</h2>
           <p>
-            Many ASL tools struggle with reading correct signs, 
+            Many ASL tools struggle with reading correct signs,
             leading to ambiguity. Our advanced model refines translations
-             to create an easy learning experience, making ASL learning more 
-             intuitive and reliable.
+            to create an easy learning experience, making ASL learning more
+            intuitive and reliable.
           </p>
         </div>
         <div className="column">
-          <h2>Bridging the Gap</h2>
+          <h2 className="subtitle">Bridging the Gap</h2>
           <p>
-            Unlike other solutions that may lack responsiveness or structured 
+            Unlike other solutions that may lack responsiveness or structured
             content, our comprehensive curriculum helps users grasp ASL more effectively
-             while understanding its nuances.
+            while understanding its nuances.
           </p>
         </div>
         <div className="column">
-          <h2>Accessible</h2>
+          <h2 className="subtitle">Accessible</h2>
           <p>
-            By offering this tool free of cost to diverse demographics and multiple 
-            language users, we aim to break down communication barriers and promote ASL 
+            By offering this tool free of cost to diverse demographics and multiple
+            language users, we aim to break down communication barriers and promote ASL
             awareness.
           </p>
         </div>

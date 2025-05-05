@@ -20,6 +20,7 @@ function SignUp() {
     //returns true if the email is valid, password is at least 6 characters long and the password and confirm password match
     const isFormValid = () => {
         return (
+            name.length >= 1 &&
             validateEmail(email) &&
             password.length >= 6 &&
             password === confirmPassword
@@ -62,6 +63,17 @@ function SignUp() {
             </h2>
             <form onSubmit={handleSubmit}>
                 <fieldset>
+
+                    <div className="field">
+                        <label>Name <sup>*</sup></label>
+                        <input
+                            type="name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder="Name"
+                        />
+                    </div>
+
                     <div className="field">
                         <label>Email Address <sup>*</sup></label>
                         <input

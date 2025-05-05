@@ -1,20 +1,19 @@
 import Sidebar from '../components/Sidebar';
 import '../Dashboard.css';
+import '../Dashboard.css';
 
 function Learn() {
+  return (
+    <div className="bg">
+      <Sidebar />
+      <div className="content">
+        <div className="title">
+          <h1>Dashboard</h1>
+        </div>
 
+        <div className="wrapper">
 
-    return (
-      <div className="goals-bg">
-        <Sidebar/>
-        <div className="goals-content">
-          <div className="goals-title">
-            <h1>Dashboard</h1>
-          </div>
-
-          <div className="dashboard-wrapper">
-            
-            <div className="dashboard-left">
+          <div className="dashboard-left">
             <h2>Upcoming Activities</h2>
             <div className="activities-list">
               <div className="activity-box">Activity</div>
@@ -37,23 +36,21 @@ function Learn() {
                   <div id="percent-number">65%</div>
                 </div>
               </div>
-              <svg className ="circle-fill" width="400px" height="400px">
-                <circle cx="200" cy="200" r="185"/>
+              <svg className="circle-fill" width="400px" height="400px">
+                <circle cx="200" cy="200" r="185" />
               </svg>
             </div>
             <div className="circle-label">
               <h2>Goals Reached</h2>
             </div>
           </div>
-          
-          </div>
-
-
 
         </div>
-      </div>
 
-    );
-  };
-  
-  export default Learn;
+      </div>
+    </div>
+
+  );
+};
+
+export default Learn;

@@ -1,25 +1,58 @@
-.dashboard-wrapper {
-    display: flex;
+.bg {
+    background-color: white;
+    height: 100vh;
     width: 100%;
-    margin-top: 100px;
-    gap: 0;
-    background-color: transparent;
+    background-size: cover;
+    display: flex;
+}
+
+.content {
+    display: flex;
+    background-color: white;
+    height: calc(100vh - 50px);
+    /*same top/bot padding as sidebar*/
+    box-sizing: border-box;
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    /* sizebar is 250px  */
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+.title {
+    background-color: inherit;
+    display: flex;
+    padding-bottom: 2rem;
+    height: 100px;
+}
+
+.title h1 {
+    background-color: inherit;
+    color: #19360A;
+}
+
+.wrapper {
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 10rem;
 }
 
 .dashboard-left {
-    flex: 1;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
     background-color: transparent;
-    margin-right: 0;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+    flex-direction: column;
 }
 
 .dashboard-left h2 {
-    color: #19360A; /*darkest green*/
+    color: #19360A;
+    /*darkest green*/
 }
 
 .activities-list {
@@ -47,8 +80,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 0;
-    justify-content: space-between;
+    margin-left: 15rem;
+    justify-content: flex-start;
     margin-bottom: 1rem;
 }
 
@@ -106,7 +139,7 @@
 #percent-number {
     font-size: 3rem;
     background-color: transparent;
-    color:#19360A;
+    color: #19360A;
     font-weight: 600;
 }
 
@@ -121,7 +154,8 @@ circle {
     stroke: #19360A;
     stroke-width: 30px;
     stroke-dasharray: 1165;
-    stroke-dashoffset: 1165; /*200*/
+    stroke-dashoffset: 1165;
+    /*200*/
     stroke-linecap: round;
     background-color: transparent;
     animation: fill-circle 1s ease forwards;
@@ -129,7 +163,8 @@ circle {
 
 @keyframes fill-circle {
     100% {
-        stroke-dashoffset: 407.75; /*407.75 / 1165 * 100 = 35(%) UNFILLED*/
+        stroke-dashoffset: 407.75;
+        /*407.75 / 1165 * 100 = 35(%) UNFILLED*/
     }
 }
 
@@ -139,19 +174,19 @@ circle {
 }
 
 .activities-list::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 .activities-list::-webkit-scrollbar-track {
-  background: #D9D9D9;
-  border-radius: 10px;
+    background: #D9D9D9;
+    border-radius: 10px;
 }
 
 .activities-list::-webkit-scrollbar-thumb {
-  background: #CDCDCD;
-  border-radius: 10px;
+    background: #CDCDCD;
+    border-radius: 10px;
 }
 
 .activities-list::-webkit-scrollbar-thumb:hover {
-  background: #C1C1C1;
+    background: #C1C1C1;
 }
