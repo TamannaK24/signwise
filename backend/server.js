@@ -8,12 +8,20 @@ const signupRoutes = require("./routes/signup");
 const loginRoutes = require("./routes/login");
 const UserModel = require("./models/User")
 
+const { latestLetter } = require('./bridge');
+
+app.get('/api/latest-letter', (req, res) => {
+    res.json({ letter: latestLetter });
+});
+
+
 // express app
 const app = express();
 
 // middleware
 app.use(cors())
 app.use(express.json()) // to parse json data from the request body
+app.use('/api/latest-letter', require('./routes/latestLetter'));
 
 
 app.use((req, res, next) => {
