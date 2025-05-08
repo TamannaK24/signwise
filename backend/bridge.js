@@ -1,12 +1,10 @@
-// bridge.js
-
-require('dotenv').config();  // Load .env variables
+require('dotenv').config(); // Load environment variables
 
 const mongoose = require('mongoose');
 const { SerialPort } = require('serialport');
 const { ReadlineParser } = require('@serialport/parser-readline');
 
-// 1. Connect to MongoDB
+// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -14,7 +12,7 @@ mongoose.connect(process.env.MONGO_URI, {
     .then(() => console.log('✔ MongoDB connected'))
     .catch(err => console.error('❌ MongoDB connection error:', err));
 
-// 2. Schema & model
+// SensorReading model (flex data)
 const sensorSchema = new mongoose.Schema({
     Flex1: Number,
     Flex2: Number,
@@ -25,19 +23,22 @@ const sensorSchema = new mongoose.Schema({
 }, { timestamps: true });
 const SensorReading = mongoose.model('SensorReading', sensorSchema);
 
-// 3. Serial port config
+// Letter model (individual letters for sign detection)
+const Letter = require('./models/Letter'); // ✅ Ensure models/Letter.js exists
+
+// Serial port configuration
 const PORT_NAME = process.env.SERIAL_PORT || 'COM3';
 const BAUD_RATE = parseInt(process.env.BAUD_RATE, 10) || 9600;
 
-// 4. Open port & parser
+// Open serial port and set up line parser
 const port = new SerialPort({ path: PORT_NAME, baudRate: BAUD_RATE });
 const parser = port.pipe(new ReadlineParser({ delimiter: '\r\n' }));
 
-// 5. Latest values
+// Latest values
 let latestReadings = {};
 let latestLetter = '';
 
-// 6. Handle data
+// Handle incoming serial data
 parser.on('data', async rawLine => {
     const trimmed = rawLine.trim();
     console.log('📥 Raw data:', trimmed);
@@ -56,19 +57,27 @@ parser.on('data', async rawLine => {
     } else {
         latestLetter = trimmed;
         console.log('📥 Parsed letter:', latestLetter);
+
+        // Save letter to Letter collection
+        try {
+            const savedLetter = await Letter.create({ letter: latestLetter });
+            console.log(`💾 Saved letter "${latestLetter}" at ${savedLetter.createdAt.toISOString()}`);
+        } catch (e) {
+            console.error('❌ Error saving letter to Letter collection:', e);
+        }
     }
 
-    // 7. Save
+    // Save all sensor data (with or without letter)
     try {
-        const saved = await SensorReading.create(docData);
-        console.log(`💾 Saved at ${saved.createdAt.toISOString()}`);
+        const savedReading = await SensorReading.create(docData);
+        console.log(`💾 Sensor reading saved at ${savedReading.createdAt.toISOString()}`);
     } catch (e) {
-        console.error('❌ Save error:', e);
+        console.error('❌ Error saving sensor data:', e);
     }
 });
 
-// 8. Errors
+// Handle serial port errors
 port.on('error', err => console.error('⚠️ Serial port error:', err.message));
 
-// 9. Exports
+// Export latest values (if used elsewhere)
 module.exports = { latestReadings, latestLetter };
