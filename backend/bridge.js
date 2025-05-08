@@ -22,6 +22,7 @@ const sensorSchema = new mongoose.Schema(
         Flex3: Number,
         Flex4: Number,
         Flex5: Number,
+        letter: String,
     },
     { timestamps: true }
 );
