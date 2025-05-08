@@ -111,11 +111,6 @@
 }
 
 .correct {
-    background-color: #a4f1a4;
+    background-color: #84ab29;
     /* Green */
-}
-
-.incorrect {
-    background-color: #f39b9b;
-    /* Red */
 }
