@@ -3,11 +3,12 @@ import Sidebar from '../components/Sidebar';
 import ProgressBar from '../components/ProgressBar';
 import '../wordsToHands.css';
 
-function wordsToText() {
+function WordsToText() {
   const words = ['CAT', 'RED', 'EAT'];
 
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [correctLetters, setCorrectLetters] = useState([false, false, false]);
+  const [incorrectIndex, setIncorrectIndex] = useState(null);
 
   const [currentLetter, setCurrentLetter] = useState('');
   const [lettersHistory, setLettersHistory] = useState([]);
@@ -27,12 +28,13 @@ function wordsToText() {
       setCurrentWordIndex(index => (index + 1) % words.length);
       setCorrectLetters([false, false, false]);
       setLettersHistory([]);
+      setIncorrectIndex(null);
     } else {
       alert('Not all letters are signed correctly.');
     }
   };
 
-  // Poll MongoDB for latest letter
+  // Auto-check letters from MongoDB
   useEffect(() => {
     const interval = setInterval(async () => {
       try {
@@ -47,6 +49,18 @@ function wordsToText() {
             if (prev[prev.length - 1] === letter) return prev;
             return [...prev, letter];
           });
+
+          const nextIndex = correctLetters.findIndex(l => !l);
+
+          if (nextIndex !== -1) {
+            if (word[nextIndex] === letter.toUpperCase()) {
+              markLetterCorrect(nextIndex);
+              setIncorrectIndex(null);
+            } else {
+              setIncorrectIndex(nextIndex);
+              setTimeout(() => setIncorrectIndex(null), 1000);
+            }
+          }
         }
       } catch (err) {
         console.error('Error fetching latest letter:', err);
@@ -54,7 +68,7 @@ function wordsToText() {
     }, 300);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [correctLetters, word]);
 
   return (
     <div className="goals-bg">
@@ -77,8 +91,12 @@ function wordsToText() {
             {word.split('').map((char, i) => (
               <div
                 key={i}
-                className={`box${i + 1} ${correctLetters[i] ? 'correct' : ''}`}
-                onClick={() => markLetterCorrect(i)}
+                className={`box${i + 1} ${correctLetters[i]
+                    ? 'correct'
+                    : incorrectIndex === i
+                      ? 'incorrect'
+                      : ''
+                  }`}
               >
                 {char}
               </div>
@@ -110,4 +128,4 @@ function wordsToText() {
   );
 }
 
-export default wordsToText;
+export default WordsToText;
