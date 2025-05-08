@@ -1,55 +1,41 @@
-require('dotenv').config()
+require('dotenv').config();
 
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require("cors")
+const cors = require("cors");
 
 const signupRoutes = require("./routes/signup");
 const loginRoutes = require("./routes/login");
-const UserModel = require("./models/User")
+const latestLetterRoute = require("./routes/latestLetter");
 
-const { latestLetter } = require('./bridge');
-
-app.get('/api/latest-letter', (req, res) => {
-    res.json({ letter: latestLetter });
-});
-
-
-// express app
 const app = express();
 
-// middleware
-app.use(cors())
-app.use(express.json()) // to parse json data from the request body
-app.use('/api/latest-letter', require('./routes/latestLetter'));
-
+// Middleware
+app.use(cors());
+app.use(express.json());
 
 app.use((req, res, next) => {
-    console.log(req.path, req.method);
+    console.log(`${req.method} ${req.path}`);
     next();
-})
+});
 
-// Welcome message for server 
+// API Welcome Route
 app.get("/", (req, res) => {
     res.send("Welcome to the SignWise API 👋");
 });
 
-// routes
-// app.use("/api/workouts", workoutRoutes);
+// Routes
 app.use("/api", signupRoutes);
 app.use("/api", loginRoutes);
+app.use("/api/latestLetter", latestLetterRoute); // MongoDB-based letter fetching
 
-// connect to db
+// Connect to MongoDB and start server
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
-        // listen for requests 
         app.listen(process.env.PORT, () => {
-            console.log("Server is running on port and db is connected", process.env.PORT);
-        })
+            console.log(`✅ Server running on port ${process.env.PORT} and connected to MongoDB`);
+        });
     })
     .catch((error) => {
-        console.log(error);
-    })
-
-
-process.env 
+        console.error("❌ MongoDB connection error:", error);
+    });

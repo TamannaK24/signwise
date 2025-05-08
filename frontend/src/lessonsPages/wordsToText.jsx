@@ -3,42 +3,46 @@ import Sidebar from '../components/Sidebar';
 import ProgressBar from '../components/ProgressBar';
 import '../wordsToHands.css';
 
-function WordsToText() {
+function wordsToText() {
   const words = ['CAT', 'RED', 'EAT'];
 
-  // Game state
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [correctLetters, setCorrectLetters] = useState([false, false, false]);
 
-  // Streaming letters state
   const [currentLetter, setCurrentLetter] = useState('');
   const [lettersHistory, setLettersHistory] = useState([]);
 
-  const markLetterCorrect = (letterIndex) => {
+  const word = words[currentWordIndex];
+
+  const markLetterCorrect = (index) => {
     setCorrectLetters(prev => {
-      const next = [...prev];
-      next[letterIndex] = true;
-      return next;
+      const updated = [...prev];
+      updated[index] = true;
+      return updated;
     });
   };
 
   const checkAnswer = () => {
     if (correctLetters.every(Boolean)) {
-      setCurrentWordIndex(i => (i + 1) % words.length);
+      setCurrentWordIndex(index => (index + 1) % words.length);
       setCorrectLetters([false, false, false]);
+      setLettersHistory([]);
     } else {
-      alert("Not all letters are signed correctly");
+      alert('Not all letters are signed correctly.');
     }
   };
 
-  // Poll backend for latest letter
+  // Poll MongoDB for latest letter
   useEffect(() => {
     const interval = setInterval(async () => {
       try {
-        const res = await fetch('http://localhost:4000/api/latest-letter');
-        const { letter } = await res.json();
+        const res = await fetch('http://localhost:4000/api/latestLetter');
+        const data = await res.json();
+        const { letter } = data;
+
         if (letter) {
           setCurrentLetter(letter);
+
           setLettersHistory(prev => {
             if (prev[prev.length - 1] === letter) return prev;
             return [...prev, letter];
@@ -51,8 +55,6 @@ function WordsToText() {
 
     return () => clearInterval(interval);
   }, []);
-
-  const word = words[currentWordIndex];
 
   return (
     <div className="goals-bg">
@@ -72,13 +74,13 @@ function WordsToText() {
           </div>
 
           <div className="word-boxes">
-            {word.split('').map((ch, i) => (
+            {word.split('').map((char, i) => (
               <div
                 key={i}
                 className={`box${i + 1} ${correctLetters[i] ? 'correct' : ''}`}
                 onClick={() => markLetterCorrect(i)}
               >
-                {ch}
+                {char}
               </div>
             ))}
           </div>
@@ -93,9 +95,7 @@ function WordsToText() {
 
           <div style={{ marginTop: '2rem' }}>
             <h3>Latest Detected Letter:</h3>
-            <p style={{ fontSize: '2rem' }}>
-              {currentLetter || '—'}
-            </p>
+            <p style={{ fontSize: '2rem' }}>{currentLetter || '—'}</p>
 
             <h4>History:</h4>
             <p>
@@ -110,4 +110,4 @@ function WordsToText() {
   );
 }
 
-export default WordsToText;
+export default wordsToText;
